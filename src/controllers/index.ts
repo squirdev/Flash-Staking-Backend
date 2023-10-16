@@ -1,4 +1,4 @@
-import Auth from "./auth";
-import Token from "./token";
+import Price from "./price";
+import History from "./history";
 
-export = { Auth, Token };
+export = { Price, History };

@@ -1,13 +1,10 @@
-import AUTH from "./auth";
+import PRICE from "./price";
+import History from "./history";
 
 const API = (router: any) => {
-    // APIs for Auth
-    router.post("/registry", AUTH.registry);
-    router.post("/login", AUTH.login);
-    router.post("/g-login", AUTH.glogin);
-    router.post("/password-reset", AUTH.passwordreset);
-    router.get("/reset/:userId/:token", AUTH.handlereset);
-    router.get("/user-verify/:userId/:token", AUTH.handleverify);
+    router.get("/ftt-price", PRICE.fttPrice);
+    router.post("/flash-price", PRICE.flashPrice);
+    router.get("/staking-history", History.stakingHistory);
 };
 
 export default API;

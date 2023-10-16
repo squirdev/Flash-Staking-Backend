@@ -1,4 +1,4 @@
-import UserSchema from "./user";
-import TokenSchema from "./token";
+import PriceSchema from "./price";
+import HistorySchema from "./history";
 
-export { UserSchema, TokenSchema };
+export { PriceSchema, HistorySchema };

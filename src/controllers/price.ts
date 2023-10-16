@@ -1,19 +1,16 @@
-import { UserSchema } from "../models";
+import { PriceSchema } from "../models";
 
-const Auth = {
+const Price = {
     create: async (props: any) => {
         const { name, email, password, verify } = props;
-
         try {
-            const newData = new UserSchema({
+            const newData = new PriceSchema({
                 name: name,
                 email: email,
                 password: password,
                 verify: verify
             });
-
             const saveData = await newData.save();
-
             if (!saveData) {
                 throw new Error("Database Error");
             }
@@ -27,7 +24,7 @@ const Auth = {
         const { filter } = props;
 
         try {
-            const result = await UserSchema.findOne(filter);
+            const result = await PriceSchema.findOne(filter);
 
             return result;
         } catch (err: any) {
@@ -37,7 +34,7 @@ const Auth = {
     fintById: async (props: any) => {
         const { param } = props;
         try {
-            const result = await UserSchema.findById(param);
+            const result = await PriceSchema.findById(param);
 
             return result;
         } catch (err: any) {
@@ -46,4 +43,4 @@ const Auth = {
     }
 };
 
-export default Auth;
+export default Price;
